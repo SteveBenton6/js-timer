@@ -14,7 +14,7 @@ class Timer {
 
   start = () => {
     if (this.onStart) {
-      this.onStart();
+      this.onStart(this.timeRemaining);
     }
     this.tick();
     // console.log("Time to start the timer!");
@@ -35,7 +35,7 @@ class Timer {
     } else {
       this.timeRemaining = this.timeRemaining - 0.05;
       if (this.onTick) {
-        this.onTick();
+        this.onTick(this.timeRemaining);
       }
     }
   };
